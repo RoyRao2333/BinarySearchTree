@@ -12,8 +12,6 @@
 #include <iostream>
 using namespace std;
 
-#endif /* BST_hpp */
-
 template<typename T> class BSTNode {
 public:
     BSTNode(T _data): data(_data), leftChild(nullptr), rightChild(nullptr) {}
@@ -178,3 +176,5 @@ template<typename T> void BSTree<T>::clear(BSTNode<T> *iter) {
 template<typename T> int BSTree<T>::getLength() {
     return this->length;
 }
+
+#endif /* BST_hpp */
