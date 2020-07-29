@@ -119,9 +119,9 @@ template<typename T> BSTNode<T>* BSTree<T>::find(BSTNode<T> *iter, T data) {
         return nullptr;
     }
     if (data < iter->data) {
-        this->find(iter->leftChild, data);
+        return this->find(iter->leftChild, data);
     } else if (data > iter->data) {
-        this->find(iter->rightChild, data);
+        return this->find(iter->rightChild, data);
     } else {
         return iter;
     }
@@ -135,7 +135,7 @@ template<typename T> BSTNode<T>* BSTree<T>::findMinimum(BSTNode<T> *iter) {
     if (iter->leftChild == nullptr) {
         return iter;
     } else {
-        this->findMinimum(iter->leftChild);
+        return this->findMinimum(iter->leftChild);
     }
 }
 
@@ -147,7 +147,7 @@ template<typename T> BSTNode<T>* BSTree<T>::findMaximum(BSTNode<T> *iter) {
     if (iter->rightChild == nullptr) {
         return iter;
     } else {
-        this->findMaximum(iter->rightChild);
+        return this->findMaximum(iter->rightChild);
     }
 }
 
