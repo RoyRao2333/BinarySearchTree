@@ -66,9 +66,9 @@ template<typename T> BSTNode<T>* BSTree<T>::insert(BSTNode<T> *iter, T data) {
     if (iter == nullptr) {
         iter = new BSTNode<T>(data);
     } else if (data < iter->data) {
-        iter->leftChild = insert(iter->leftChild, data);
+        return iter->leftChild = insert(iter->leftChild, data);
     } else if (data > iter->data) {
-        iter->rightChild = insert(iter->rightChild, data);
+        return iter->rightChild = insert(iter->rightChild, data);
     }
     return iter;
 }
@@ -85,9 +85,9 @@ template<typename T> bool BSTree<T>::deleteWith(BSTNode<T> *iter, T data) {
     }
     BSTNode<T> *temp = nullptr;
     if (data < iter->data) {
-        this->deleteWith(iter->leftChild, data);
+        return this->deleteWith(iter->leftChild, data);
     } else if (data > iter->data) {
-        this->deleteWith(iter->rightChild, data);
+        return this->deleteWith(iter->rightChild, data);
     } else {
         if (iter->leftChild != nullptr && iter->rightChild != nullptr) {
             /// two children
