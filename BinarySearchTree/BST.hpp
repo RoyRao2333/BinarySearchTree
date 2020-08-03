@@ -65,6 +65,7 @@ template<typename T> BSTNode<T>* BSTree<T>::insert(T data) {
 template<typename T> BSTNode<T>* BSTree<T>::insert(BSTNode<T> *iter, T data) {
     if (iter == nullptr) {
         iter = new BSTNode<T>(data);
+        return iter;
     } else if (data < iter->data) {
         return iter->leftChild = insert(iter->leftChild, data);
     } else if (data > iter->data) {
